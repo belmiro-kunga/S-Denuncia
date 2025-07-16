@@ -1,0 +1,295 @@
+.login-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  width: 100vw;
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-card {
+  background: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px rgba(34, 74, 190, 0.12), 0 1.5px 6px rgba(0,0,0,0.04);
+  overflow: hidden;
+  width: 100%;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: none;
+}
+.login-card:hover {
+  box-shadow: 0 16px 40px rgba(34, 74, 190, 0.18), 0 2px 8px rgba(0,0,0,0.06);
+  transform: translateY(-2px) scale(1.01);
+}
+
+.login-header {
+  background: #4e73df;
+  text-align: center;
+  padding: 2rem 1rem 1.5rem 1rem;
+  position: relative;
+  color: #fff;
+  box-shadow: 0 2px 12px 0 rgba(34, 74, 190, 0.08);
+}
+.icon-pulse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+.icon-pulse i {
+  font-size: 2.5rem;
+  background: radial-gradient(circle at 60% 40%, #fff3, #4e73df 80%);
+  border-radius: 50%;
+  padding: 0.7rem;
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 0 0 #fff3;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #fff3; }
+  70% { box-shadow: 0 0 0 12px #fff0; }
+  100% { box-shadow: 0 0 0 0 #fff3; }
+}
+.login-header h1 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0.2rem 0;
+  letter-spacing: 0.01em;
+}
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.95;
+  margin-bottom: 0;
+  font-weight: 400;
+  background: radial-gradient(circle at 50% 80%, #fff6 0%, #4e73df 80%);
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+  box-shadow: 0 1px 8px 0 #fff2;
+}
+.card-body {
+  padding: 2.5rem 2.5rem 1.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+@media (max-width: 600px) {
+  .card-body {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+  .login-header h1 {
+    font-size: 1.1rem;
+  }
+  .icon-pulse i {
+    font-size: 1.5rem;
+    padding: 0.4rem;
+  }
+}
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  animation: fadeIn 0.3s;
+}
+.alert.success {
+  background: #e6f9ed;
+  color: #1cc88a;
+  border-left: 4px solid #1cc88a;
+}
+.alert.error {
+  background: #fbeaea;
+  color: #e74a3b;
+  border-left: 4px solid #e74a3b;
+  animation: shake 0.3s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+.alert button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  position: absolute;
+  right: 0.7rem;
+  top: 0.7rem;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+.label-row label {
+  color: #343a40;
+  font-weight: 500;
+}
+.label-row .forgot {
+  font-size: 0.95rem;
+  color: #4e73df;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.label-row .forgot:hover {
+  color: #2e59d9;
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #f8f9fc;
+  border-radius: 0.7rem;
+  border: 1.5px solid #e3e6f0;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+  transition: border 0.2s;
+  position: relative;
+}
+.input-group:focus-within {
+  border-color: #4e73df;
+}
+.input-group.invalid {
+  border-color: #e74a3b;
+}
+.input-icon {
+  color: #b7b9cc;
+  margin-left: 0.7rem;
+  margin-right: 0.2rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+}
+.input-icon.right {
+  margin-left: auto;
+  margin-right: 0.7rem;
+  cursor: pointer;
+}
+.input-icon.eye {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 0.7rem;
+  font-size: 1.1rem;
+}
+.input-group input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.8rem 0.7rem;
+  font-size: 1rem;
+  color: #343a40;
+  outline: none;
+}
+.input-group input:disabled {
+  background: #f1f1f1;
+}
+.remember-row {
+  margin: 0.7rem 0 1.2rem 0;
+  display: flex;
+  align-items: center;
+}
+.remember-row label {
+  color: #343a40;
+  font-size: 0.97rem;
+  font-weight: 500;
+  margin-left: 0.4rem;
+}
+.login-btn {
+  width: 100%;
+  background: #4e73df;
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.9rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 8px 0 #4e73df22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.login-btn:hover:not(:disabled) {
+  background: #2e59d9;
+  box-shadow: 0 4px 16px 0 #2e59d933;
+  transform: translateY(-1px) scale(1.01);
+}
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #224abe;
+  border-radius: 50%;
+  width: 1.1em;
+  height: 1.1em;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.register-link {
+  text-align: center;
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  color: #343a40;
+}
+.register-link a {
+  color: #4e73df;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.register-link a:hover {
+  color: #2e59d9;
+}
+.login-footer {
+  text-align: center;
+  padding: 1.1rem 0 0.7rem 0;
+  background: none;
+}
+.login-footer a {
+  color: #4e73df;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+}
+.login-footer a:hover {
+  color: #2e59d9;
+} 

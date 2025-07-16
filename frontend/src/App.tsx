@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Denuncia from './pages/Denuncia';
 import Rastreio from './pages/Rastreio';
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 
 function Home() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/denuncia" element={<Denuncia />} />
         <Route path="/rastreio" element={<Rastreio />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );
