@@ -1,0 +1,1 @@
+ALTER TABLE denuncias ADD COLUMN clincode VARCHAR(20) UNIQUE; 
