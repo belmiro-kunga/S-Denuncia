@@ -1,4 +1,5 @@
 import { pool } from '../db';
+import { gerarClincode } from '../utils/clincode';
 
 export interface Denuncia {
   id?: number;
@@ -8,15 +9,6 @@ export interface Denuncia {
   status?: string;
   criado_em?: Date;
   clincode?: string;
-}
-
-function gerarClincode(tamanho = 8): string {
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-  let code = '';
-  for (let i = 0; i < tamanho; i++) {
-    code += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  return code;
 }
 
 export async function criarDenuncia(denuncia: Denuncia): Promise<Denuncia> {

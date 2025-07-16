@@ -9,7 +9,7 @@ export async function cadastrarRastreio(req: Request, res: Response) {
     }
     const rastreio = await criarRastreio({ denuncia_id, status, observacao });
     res.status(201).json(rastreio);
-  } catch (_err) {
+  } catch {
     res.status(500).json({ error: 'Erro ao cadastrar rastreio.' });
   }
 }
@@ -22,7 +22,7 @@ export async function listarRastreiosPorDenuncia(req: Request, res: Response) {
     }
     const rastreios = await buscarRastreiosPorDenuncia(denuncia_id);
     res.json(rastreios);
-  } catch (_err) {
+  } catch {
     res.status(500).json({ error: 'Erro ao buscar rastreios.' });
   }
 }

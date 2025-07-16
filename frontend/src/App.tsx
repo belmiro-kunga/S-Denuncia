@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Denuncia from './pages/Denuncia';
+import Rastreio from './pages/Rastreio';
+import Login from './pages/Login';
 
 function Home() {
   return (
@@ -14,13 +16,6 @@ function Home() {
       <p>Bem-vindo ao sistema! Escolha uma opção no menu.</p>
     </div>
   );
-}
-
-function Rastreio() {
-  return <h2>Página de Rastreio de Denúncia (em construção)</h2>;
-}
-function Login() {
-  return <h2>Página de Login (em construção)</h2>;
 }
 
 function App() {

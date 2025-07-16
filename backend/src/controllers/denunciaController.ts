@@ -14,7 +14,7 @@ export async function cadastrarDenuncia(req: Request, res: Response) {
     }
     const denuncia = await criarDenuncia({ usuario_id, titulo, descricao });
     res.status(201).json(denuncia);
-  } catch (_err) {
+  } catch {
     res.status(500).json({ error: 'Erro ao cadastrar denúncia.' });
   }
 }
@@ -27,7 +27,7 @@ export async function listarDenunciasPorUsuario(req: Request, res: Response) {
     }
     const denuncias = await buscarDenunciasPorUsuario(usuario_id);
     res.json(denuncias);
-  } catch (_err) {
+  } catch {
     res.status(500).json({ error: 'Erro ao buscar denúncias.' });
   }
 }
@@ -43,7 +43,7 @@ export async function buscarDenuncia(req: Request, res: Response) {
       return res.status(404).json({ error: 'Denúncia não encontrada.' });
     }
     res.json(denuncia);
-  } catch (_err) {
+  } catch {
     res.status(500).json({ error: 'Erro ao buscar denúncia.' });
   }
 }
@@ -59,7 +59,7 @@ export async function buscarDenunciaPorClincodeController(req: Request, res: Res
       return res.status(404).json({ error: 'Denúncia não encontrada.' });
     }
     res.json(denuncia);
-  } catch (_err) {
+  } catch {
     res.status(500).json({ error: 'Erro ao buscar denúncia por clincode.' });
   }
 }
